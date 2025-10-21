@@ -51,7 +51,7 @@ export function Header() {
   }, []);
 
   const NavLink = ({ href, label, isMobile = false }: { href: string; label: string, isMobile?: boolean }) => (
-    <Button asChild variant="destructive" className="bg-destructive text-destructive-foreground hover:bg-accent hover:text-accent-foreground">
+    <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
         <Link
           href={href}
           onClick={() => isMobile && setIsSheetOpen(false)}
@@ -64,7 +64,7 @@ export function Header() {
   const CalculatorsDropdown = () => (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button className="bg-destructive text-destructive-foreground hover:bg-destructive/90">
+        <Button className="bg-accent text-accent-foreground hover:bg-accent/90">
           Calculators
           <ChevronDown className="ml-1 h-4 w-4" />
         </Button>
