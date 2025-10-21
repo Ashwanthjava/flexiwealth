@@ -1,18 +1,21 @@
 import Image from 'next/image';
+import { cn } from '@/lib/utils';
 
 export function Logo({ className }: { className?: string }) {
-  const svg = `
-    <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="20" cy="20" r="16" stroke="currentColor" stroke-width="3" stroke-linecap="round" pathLength="1" stroke-dasharray="0.85 0.15" transform="rotate(-90 20 20)"/>
-      <line x1="2" y1="20" x2="38" y2="20" stroke="currentColor" stroke-width="2"/>
-    </svg>
-  `;
-
-  const dataUri = `data:image/svg+xml;base64,${Buffer.from(svg).toString('base64')}`;
-
   return (
-    <div className={`flex items-center gap-2 ${className}`} aria-label="FlexiWealth Logo">
-      <Image src={dataUri} width={32} height={32} alt="FlexiWealth Logo" className="text-primary" />
+    <div className={cn("flex items-center gap-2", className)} aria-label="FlexiWealth Logo">
+      {/* 
+        To use your own logo, replace 'src' with the path to your image file.
+        For example, if you add 'logo.svg' to the 'public' folder, 
+        you would change src to "/logo.svg".
+      */}
+      <Image 
+        src="/icon.svg" 
+        width={32} 
+        height={32} 
+        alt="FlexiWealth Logo" 
+        className="text-primary"
+      />
       <span className="font-headline text-2xl font-bold">
         FlexiWealth
       </span>
