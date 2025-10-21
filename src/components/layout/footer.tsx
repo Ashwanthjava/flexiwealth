@@ -7,7 +7,7 @@ export function Footer() {
     <footer id="contact" className="bg-secondary text-secondary-foreground py-12">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="md:col-span-1">
+          <div className="md:col-span-1 text-foreground">
             <Logo />
             <p className="mt-4 text-sm max-w-xs">
               Guiding your financial journey towards a prosperous future.

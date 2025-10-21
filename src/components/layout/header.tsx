@@ -93,7 +93,7 @@ export function Header() {
       )}
     >
       <div className="container mx-auto px-4 h-20 flex justify-between items-center">
-        <Link href="/#home">
+        <Link href="/#home" className="text-primary">
           <Logo />
         </Link>
         <nav className="hidden md:flex items-center gap-6">
@@ -112,7 +112,9 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-background">
               <div className="flex justify-between items-center p-4 border-b">
-                <Logo />
+                <div className="text-primary">
+                  <Logo />
+                </div>
                 <SheetClose asChild>
                   <Button variant="ghost" size="icon">
                     <X className="h-6 w-6" />
