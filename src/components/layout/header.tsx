@@ -4,15 +4,38 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Logo } from '@/components/icons/logo';
 import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+  DropdownMenuSeparator
+} from "@/components/ui/dropdown-menu"
 
 const navItems = [
   { href: '#home', label: 'Home' },
   { href: '#about-us', label: 'About Us' },
   { href: '#services', label: 'Services' },
   { href: '#contact', label: 'Contact' },
+];
+
+const calculatorItems = [
+    { href: '/calculators/crorepati', label: 'Become A Crorepati' },
+    { href: '/calculators/sip-return', label: 'SIP Return Calculator' },
+    { href: '/calculators/retirement-planning', label: 'Retirement Planning Calculator' },
+    { href: '/calculators/emi', label: 'EMI Calculator' },
+    { href: '/calculators/ppf', label: 'PPF Calculator' },
+    { href: '/calculators/epf', label: 'Employees PF Calculator' },
+    { href: '/calculators/goal-setting', label: 'Goal Setting Calculator' },
+    { href: '/calculators/financial-goal', label: 'Composite Financial Goal Calculator' },
+    { href: '/calculators/children-education', label: 'Children Education Planner' },
+    { href: '/calculators/networth', label: 'Networth Calculator' },
+    { href: '/calculators/compounding', label: 'Compounding Calculator' },
+    { href: '/calculators/human-life-value', label: 'Human Life Value Calculator' },
+    { href: '/calculators/nps', label: 'NPS Calculator' },
 ];
 
 export function Header() {
@@ -39,6 +62,30 @@ export function Header() {
       {label}
     </Link>
   );
+  
+  const CalculatorsDropdown = () => (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button className="bg-destructive text-destructive-foreground hover:bg-destructive/90">
+          Calculators
+          <ChevronDown className="ml-1 h-4 w-4" />
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className="w-80" style={{
+          animation: 'slide-down 0.3s ease-out'
+      }}>
+        <DropdownMenuItem asChild>
+          <Link href="#portfolio-review" className="cursor-pointer">Investment Comparison Calculator</Link>
+        </DropdownMenuItem>
+        <DropdownMenuSeparator />
+        {calculatorItems.map((item) => (
+            <DropdownMenuItem key={item.href} asChild>
+                <Link href={item.href} className="cursor-pointer">{item.label}</Link>
+            </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
 
   return (
     <header
@@ -55,6 +102,7 @@ export function Header() {
           {navItems.map((item) => (
             <NavLink key={item.href} {...item} />
           ))}
+          <CalculatorsDropdown />
         </nav>
         <div className="md:hidden">
           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
@@ -78,6 +126,9 @@ export function Header() {
                 {navItems.map((item) => (
                   <NavLink key={item.href} {...item} isMobile />
                 ))}
+                 <div className="p-4">
+                    <CalculatorsDropdown />
+                 </div>
               </nav>
             </SheetContent>
           </Sheet>
