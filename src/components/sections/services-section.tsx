@@ -22,7 +22,7 @@ const services = [
     title: 'NPS (National Pension System)',
     description: 'NPS gives you a disciplined, tax-efficient way to build a retirement corpus that keeps working for you long after you stop working. We guide you through smart asset allocation, tax benefits, and the right withdrawal strategy — so you can actually enjoy your post-60 life.',
     cta: 'Plan your retirement',
-    href: '#',
+    href: 'https://flow.assetplus.in/client_onboarding/?advisor=68e200cbee8339b780dd0163',
   },
   {
     icon: PieChart,
