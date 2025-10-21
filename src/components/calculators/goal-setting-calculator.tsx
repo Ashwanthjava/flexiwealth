@@ -53,6 +53,11 @@ export function GoalSettingCalculator() {
     };
   }, [targetAmount, monthlySip, returnRate]);
 
+  const pieData = [
+    { name: 'Total Investment', value: totalInvestment, color: 'hsl(var(--destructive))' },
+    { name: 'Total Growth', value: totalGrowth, color: 'hsl(var(--primary))' },
+  ];
+
   return (
     <div className="bg-background text-foreground">
       <div className="bg-primary text-primary-foreground py-10">
