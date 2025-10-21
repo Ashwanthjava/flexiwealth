@@ -25,7 +25,7 @@ export function HeroSection({ id }: { id: string }) {
           Navigate Your Path to Financial Freedom
         </h1>
         <p className="mt-6 text-lg md:text-xl max-w-2xl mx-auto drop-shadow-md">
-          At WealthFront Navigator, we empower you with the tools and expertise to build lasting wealth and achieve your most ambitious financial goals.
+          At FlexiWealth, we empower you with the tools and expertise to build lasting wealth and achieve your most ambitious financial goals.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button size="lg" asChild className="bg-accent text-accent-foreground hover:bg-accent/90 transform hover:scale-105 transition-transform">

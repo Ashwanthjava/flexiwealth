@@ -4,7 +4,7 @@ import { Footer } from '@/components/layout/footer';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'WealthFront Navigator',
+  title: 'FlexiWealth',
   description: 'Your guide to wealth creation and financial goals.',
 };
 

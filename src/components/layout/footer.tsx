@@ -25,7 +25,7 @@ export function Footer() {
             <h3 className="font-headline text-lg font-semibold text-foreground">Contact Us</h3>
             <ul className="mt-4 space-y-2">
               <li className="text-sm">123 Finance Street, New York, USA</li>
-              <li className="text-sm">contact@wealthfrontnav.com</li>
+              <li className="text-sm">contact@flexiwealth.com</li>
               <li className="text-sm">+1 (234) 567-890</li>
             </ul>
           </div>
@@ -40,7 +40,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-12 pt-8 border-t text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} WealthFront Navigator. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} FlexiWealth. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

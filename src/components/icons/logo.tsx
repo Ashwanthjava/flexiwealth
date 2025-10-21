@@ -2,16 +2,13 @@ import type { SVGProps } from 'react';
 
 export function Logo({ className }: { className?: string }) {
   return (
-    <div className={`flex items-center gap-2 ${className}`} aria-label="WealthFront Navigator Logo">
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M4 18V12" stroke="hsl(var(--primary))" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M9 18V7" stroke="hsl(var(--primary))" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M14 18V14" stroke="hsl(var(--primary))" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M19 18V4" stroke="hsl(var(--accent))" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M2 21H22" stroke="hsl(var(--foreground))" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <div className={`flex items-center gap-2 ${className}`} aria-label="FlexiWealth Logo">
+      <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="20" cy="20" r="16" stroke="hsl(var(--primary))" strokeWidth="3" strokeLinecap="round" pathLength="1" strokeDasharray="0.85 0.15" transform="rotate(-90 20 20)"/>
+        <line x1="2" y1="20" x2="38" y2="20" stroke="hsl(var(--primary))" strokeWidth="2"/>
       </svg>
-      <span className="font-headline text-xl font-bold text-foreground">
-        WealthFront<span className="text-primary">Navigator</span>
+      <span className="font-headline text-2xl font-bold text-primary">
+        FlexiWealth
       </span>
     </div>
   );
