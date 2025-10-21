@@ -14,7 +14,7 @@ const services = [
     icon: Shield,
     title: 'Insurance',
     description: "Insurance isn’t just a checkbox — it’s peace of mind. We help you pick the right cover across life, health, and critical illness plans so your loved ones and goals stay secure, no matter what life throws your way. We don’t sell — we advise. So you only get what you need, nothing extra.",
-    cta: 'Secure your future ➜',
+    cta: 'Secure your future',
     href: 'https://flow.assetplus.in/client_onboarding/?advisor=68e200cbee8339b780dd0163',
   },
   {
