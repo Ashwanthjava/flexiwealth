@@ -6,32 +6,44 @@ const services = [
   {
     icon: BarChart,
     title: 'Mutual Funds',
-    description: 'Diversify your portfolio with our curated list of top-performing mutual funds tailored to your risk appetite.',
+    description: 'Mutual funds are the easiest way to get your money working for you. Whether you’re chasing long-term growth, steady income, or balanced returns — we handpick funds that match your goals and risk profile. No random tips. No herd mentality. Just data-backed decisions and consistent monitoring.',
+    cta: 'Let’s build your portfolio',
+    href: '/services/mutual-funds',
   },
   {
     icon: Shield,
     title: 'Life Insurance',
     description: 'Secure your family\'s future with comprehensive life insurance plans from trusted providers.',
+    cta: 'Read More',
+    href: '#',
   },
   {
     icon: FileText,
     title: 'NPS',
     description: 'Plan for your retirement with the National Pension System for a financially independent future.',
+    cta: 'Read More',
+    href: '#',
   },
   {
     icon: PieChart,
     title: 'Portfolio Management',
     description: 'Expert-led portfolio management services to optimize your returns and manage risks effectively.',
+    cta: 'Read More',
+    href: '#',
   },
   {
     icon: TrendingUp,
     title: 'Equity Trading',
     description: 'Access real-time market data and advanced tools for smart and informed equity trading decisions.',
+    cta: 'Read More',
+    href: '#',
   },
   {
     icon: Handshake,
     title: 'Financial Planning',
     description: 'Holistic financial planning to map your life goals to the right investment strategies.',
+    cta: 'Read More',
+    href: '#',
   },
 ];
 
@@ -60,8 +72,8 @@ export function ServicesSection({ id }: { id: string }) {
                 <p className="text-muted-foreground">{service.description}</p>
               </CardContent>
               <div className="p-6 pt-0">
-                <Link href="#" className="font-semibold text-primary flex items-center group-hover:text-accent transition-colors">
-                  Read More
+                <Link href={service.href} className="font-semibold text-primary flex items-center group-hover:text-accent transition-colors">
+                  {service.cta}
                   <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
