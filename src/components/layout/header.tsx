@@ -16,10 +16,10 @@ import {
 } from "@/components/ui/dropdown-menu"
 
 const navItems = [
-  { href: '#home', label: 'Home' },
-  { href: '#about-us', label: 'About Us' },
-  { href: '#services', label: 'Services' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/#home', label: 'Home' },
+  { href: '/#about-us', label: 'About Us' },
+  { href: '/#services', label: 'Services' },
+  { href: '/#contact', label: 'Contact' },
 ];
 
 const calculatorItems = [
@@ -51,7 +51,7 @@ export function Header() {
   }, []);
 
   const NavLink = ({ href, label, isMobile = false }: { href: string; label: string, isMobile?: boolean }) => (
-    <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
+    <Button size="lg" asChild className="bg-accent text-accent-foreground hover:bg-accent/90 transform hover:scale-105 transition-transform">
         <Link
           href={href}
           onClick={() => isMobile && setIsSheetOpen(false)}
@@ -64,7 +64,7 @@ export function Header() {
   const CalculatorsDropdown = () => (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button className="bg-accent text-accent-foreground hover:bg-accent/90">
+        <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 transform hover:scale-105 transition-transform">
           Calculators
           <ChevronDown className="ml-1 h-4 w-4" />
         </Button>
@@ -73,7 +73,7 @@ export function Header() {
           animation: 'slide-down 0.3s ease-out'
       }}>
         <DropdownMenuItem asChild>
-          <Link href="#portfolio-review" className="cursor-pointer">Investment Comparison Calculator</Link>
+          <Link href="/#portfolio-review" className="cursor-pointer">Investment Comparison Calculator</Link>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         {calculatorItems.map((item) => (
@@ -93,7 +93,7 @@ export function Header() {
       )}
     >
       <div className="container mx-auto px-4 h-20 flex justify-between items-center">
-        <Link href="#home">
+        <Link href="/#home">
           <Logo />
         </Link>
         <nav className="hidden md:flex items-center gap-6">
