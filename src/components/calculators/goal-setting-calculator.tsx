@@ -53,11 +53,6 @@ export function GoalSettingCalculator() {
     };
   }, [targetAmount, monthlySip, returnRate]);
 
-  const pieData = [
-    { name: 'Total Investment', value: totalInvestment, color: 'hsl(var(--destructive))' },
-    { name: 'Total Growth', value: totalGrowth, color: 'hsl(var(--primary))' },
-  ];
-
   return (
     <div className="bg-background text-foreground">
       <div className="bg-primary text-primary-foreground py-10">
@@ -81,7 +76,7 @@ export function GoalSettingCalculator() {
               </CardContent>
             </Card>
             <Card className="shadow-md">
-              <CardHeader><CardTitle className="text-lg">Monthly Investment (SIP, Rs)</CardHeader>
+              <CardHeader><CardTitle className="text-lg">Monthly Investment (SIP, Rs)</CardTitle></CardHeader>
               <CardContent>
                 <Input type="number" value={monthlySip} onChange={(e) => setMonthlySip(Number(e.target.value))} className="mb-4 text-lg font-bold" />
                 <Slider min={500} max={200000} step={500} value={[monthlySip]} onValueChange={(vals) => setMonthlySip(vals[0])} />
