@@ -28,7 +28,7 @@ export default function MutualFundsPage() {
                 No random tips. No herd mentality. Just data-backed decisions and consistent monitoring. Let us guide you towards a diversified portfolio that stands the test of time.
               </p>
               <Button size="lg" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-                <Link href="/#contact">
+                <Link href="https://flow.assetplus.in/client_onboarding/?advisor=68e200cbee8339b780dd0163" target="_blank" rel="noopener noreferrer">
                   Let’s build your portfolio ➜
                 </Link>
               </Button>

@@ -8,12 +8,12 @@ const services = [
     title: 'Mutual Funds',
     description: 'Mutual funds are the easiest way to get your money working for you. Whether you’re chasing long-term growth, steady income, or balanced returns — we handpick funds that match your goals and risk profile. No random tips. No herd mentality. Just data-backed decisions and consistent monitoring.',
     cta: 'Let’s build your portfolio',
-    href: '/services/mutual-funds',
+    href: 'https://flow.assetplus.in/client_onboarding/?advisor=68e200cbee8339b780dd0163',
   },
   {
     icon: Shield,
     title: 'Life Insurance',
-    description: 'Secure your family\'s future with comprehensive life insurance plans from trusted providers.',
+    description: "Secure your family's future with comprehensive life insurance plans from trusted providers.",
     cta: 'Read More',
     href: '#',
   },
@@ -72,7 +72,12 @@ export function ServicesSection({ id }: { id: string }) {
                 <p className="text-muted-foreground">{service.description}</p>
               </CardContent>
               <div className="p-6 pt-0">
-                <Link href={service.href} className="font-semibold text-primary flex items-center group-hover:text-accent transition-colors">
+                <Link 
+                  href={service.href} 
+                  className="font-semibold text-primary flex items-center group-hover:text-accent transition-colors"
+                  target={service.href.startsWith('http') ? '_blank' : '_self'}
+                  rel={service.href.startsWith('http') ? 'noopener noreferrer' : ''}
+                >
                   {service.cta}
                   <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
                 </Link>
