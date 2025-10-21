@@ -5,24 +5,6 @@
       "description": "A modern, bright office with people collaborating, suggesting financial planning and success.",
       "imageUrl": "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxmaW5hbmNlJTIwb2ZmaWNlfGVufDB8fHx8MTc2MTA1MjQxNnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "finance office"
-    },
-    {
-      "id": "blog-1",
-      "description": "A split image showing a piggy bank being filled with coins (SIP) vs a single large gold coin (Lumpsum).",
-      "imageUrl": "https://images.unsplash.com/photo-1695548043715-feb22ef40436?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxpbnZlc3RtZW50JTIwc3RyYXRlZ3l8ZW58MHx8fHwxNzYxMDUyNDE1fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "investment strategy"
-    },
-    {
-      "id": "blog-2",
-      "description": "A sturdy, classic vault door, representing safety and security of debt funds.",
-      "imageUrl": "https://images.unsplash.com/photo-1634024521007-197d1624c673?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzYWZlJTIwaW52ZXN0bWVudHxlbnwwfHx8fDE3NjEwNTI0MTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "safe investment"
-    },
-    {
-      "id": "blog-3",
-      "description": "A complex stock market chart on multiple screens, showing market analysis.",
-      "imageUrl": "https://images.unsplash.com/photo-1579226905180-636b76d96082?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtYXJrZXQlMjBhbmFseXNpc3xlbnwwfHx8fDE3NjA5OTM4NDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "market analysis"
     }
   ]
 }
