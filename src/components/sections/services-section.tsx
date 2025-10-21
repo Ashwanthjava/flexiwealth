@@ -12,9 +12,9 @@ const services = [
   },
   {
     icon: Shield,
-    title: 'Life Insurance',
-    description: "Secure your family's future with comprehensive life insurance plans from trusted providers.",
-    cta: 'Read More',
+    title: 'Insurance',
+    description: "Insurance isn’t just a checkbox — it’s peace of mind. We help you pick the right cover across life, health, and critical illness plans so your loved ones and goals stay secure, no matter what life throws your way. We don’t sell — we advise. So you only get what you need, nothing extra.",
+    cta: 'Secure your future ➜',
     href: '#',
   },
   {
