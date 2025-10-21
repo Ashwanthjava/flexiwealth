@@ -51,16 +51,14 @@ export function Header() {
   }, []);
 
   const NavLink = ({ href, label, isMobile = false }: { href: string; label: string, isMobile?: boolean }) => (
-    <Link
-      href={href}
-      className={cn(
-        "font-medium transition-colors hover:text-primary",
-        isMobile ? "block w-full text-lg p-4" : ""
-      )}
-      onClick={() => isMobile && setIsSheetOpen(false)}
-    >
-      {label}
-    </Link>
+    <Button asChild variant="destructive" className="bg-destructive text-destructive-foreground hover:bg-accent hover:text-accent-foreground">
+        <Link
+          href={href}
+          onClick={() => isMobile && setIsSheetOpen(false)}
+        >
+          {label}
+        </Link>
+    </Button>
   );
   
   const CalculatorsDropdown = () => (
@@ -122,11 +120,11 @@ export function Header() {
                   </Button>
                 </SheetClose>
               </div>
-              <nav className="mt-6 flex flex-col gap-2">
+              <nav className="mt-6 flex flex-col gap-4 p-4">
                 {navItems.map((item) => (
                   <NavLink key={item.href} {...item} isMobile />
                 ))}
-                 <div className="p-4">
+                 <div className="pt-2">
                     <CalculatorsDropdown />
                  </div>
               </nav>
