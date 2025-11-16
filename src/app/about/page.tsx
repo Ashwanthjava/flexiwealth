@@ -16,7 +16,7 @@ const coreValues = [
 
 export default function AboutPage() {
     const aboutHero = PlaceHolderImages.find(p => p.id === 'about-hero');
-    const harshJhaveri = PlaceHolderImages.find(p => p.id === 'harsh-jhaveri');
+    const anishPaulose = PlaceHolderImages.find(p => p.id === 'anish-paulose');
 
     return (
         <>
@@ -83,25 +83,32 @@ export default function AboutPage() {
                             </p>
                         </div>
                         <div className="flex justify-center">
-                           <Card className="max-w-sm w-full shadow-xl overflow-hidden text-center">
-                               {harshJhaveri && (
-                                     <div className="relative h-64 w-full">
+                           <Card className="max-w-md w-full shadow-xl overflow-hidden text-center">
+                               {anishPaulose && (
+                                     <div className="relative h-80 w-full">
                                         <Image 
-                                            src={harshJhaveri.imageUrl} 
-                                            alt={harshJhaveri.description}
+                                            src={anishPaulose.imageUrl} 
+                                            alt={anishPaulose.description}
                                             fill
-                                            className="object-cover"
-                                            data-ai-hint={harshJhaveri.imageHint}
+                                            className="object-cover object-top"
+                                            data-ai-hint={anishPaulose.imageHint}
                                         />
                                     </div>
                                )}
                                 <CardHeader>
-                                    <CardTitle className="font-headline text-2xl">Harsh Jhaveri</CardTitle>
-                                    <p className="text-primary font-semibold">Founder & Principal Advisor</p>
+                                    <CardTitle className="font-headline text-2xl">Mr. Anish Paulose</CardTitle>
+                                    <div className="text-primary font-semibold text-sm">
+                                        <p>AMFI-Registered Mutual Fund Distributor (ARN-341836)</p>
+                                        <p>NISM Certified Research Analyst</p>
+                                        <p>7 years of capital market experience</p>
+                                    </div>
                                 </CardHeader>
-                                <CardContent>
-                                    <p className="text-muted-foreground">
-                                        With over 15 years of experience in financial markets, Harsh is passionate about helping individuals and families build lasting wealth. His expertise lies in portfolio management and goal-based financial planning.
+                                <CardContent className="text-left text-muted-foreground space-y-4">
+                                    <p>
+                                        Mr. Anish Paulose has been passionately promoting equity culture among India's middle class for the past two years. His deep understanding of both equity and debt markets helps everyday investors achieve financial prosperity.
+                                    </p>
+                                    <p>
+                                        Driven by a commitment to growth and excellence, he has built lasting wealth for clients and earned their long-term trust through ethical, knowledge-based financial solutions.
                                     </p>
                                 </CardContent>
                             </Card>
