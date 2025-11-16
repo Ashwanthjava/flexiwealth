@@ -19,7 +19,7 @@ const navItems = [
   { href: '/#home', label: 'Home' },
   { href: '/about', label: 'About Us' },
   { href: '/#services', label: 'Services' },
-  { href: '/#contact', label: 'Contact' },
+  { href: '/contact', label: 'Contact' },
 ];
 
 const calculatorItems = [
