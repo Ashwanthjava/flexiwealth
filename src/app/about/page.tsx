@@ -83,9 +83,9 @@ export default function AboutPage() {
                             </p>
                         </div>
                         <div className="flex justify-center">
-                           <Card className="max-w-md w-full shadow-xl overflow-hidden text-center">
+                           <Card className="max-w-4xl w-full shadow-xl overflow-hidden grid grid-cols-1 md:grid-cols-2">
                                {anishPaulose && (
-                                     <div className="relative h-80 w-full">
+                                     <div className="relative min-h-[320px] md:min-h-full">
                                         <Image 
                                             src={anishPaulose.imageUrl} 
                                             alt={anishPaulose.description}
@@ -95,22 +95,24 @@ export default function AboutPage() {
                                         />
                                     </div>
                                )}
-                                <CardHeader>
-                                    <CardTitle className="font-headline text-2xl">Mr. Anish Paulose</CardTitle>
-                                    <div className="text-primary font-semibold text-sm">
-                                        <p>AMFI-Registered Mutual Fund Distributor (ARN-341836)</p>
-                                        <p>NISM Certified Research Analyst</p>
-                                        <p>7 years of capital market experience</p>
-                                    </div>
-                                </CardHeader>
-                                <CardContent className="text-left text-muted-foreground space-y-4">
-                                    <p>
-                                        Mr. Anish Paulose has been passionately promoting equity culture among India's middle class for the past two years. His deep understanding of both equity and debt markets helps everyday investors achieve financial prosperity.
-                                    </p>
-                                    <p>
-                                        Driven by a commitment to growth and excellence, he has built lasting wealth for clients and earned their long-term trust through ethical, knowledge-based financial solutions.
-                                    </p>
-                                </CardContent>
+                               <div className="flex flex-col">
+                                    <CardHeader className="text-center md:text-left">
+                                        <CardTitle className="font-headline text-2xl">Mr. Anish Paulose</CardTitle>
+                                        <div className="text-primary font-semibold text-sm">
+                                            <p>AMFI-Registered Mutual Fund Distributor (ARN-341836)</p>
+                                            <p>NISM Certified Research Analyst</p>
+                                            <p>7 years of capital market experience</p>
+                                        </div>
+                                    </CardHeader>
+                                    <CardContent className="text-left text-muted-foreground space-y-4">
+                                        <p>
+                                            Mr. Anish Paulose has been passionately promoting equity culture among India's middle class for the past two years. His deep understanding of both equity and debt markets helps everyday investors achieve financial prosperity.
+                                        </p>
+                                        <p>
+                                            Driven by a commitment to growth and excellence, he has built lasting wealth for clients and earned their long-term trust through ethical, knowledge-based financial solutions.
+                                        </p>
+                                    </CardContent>
+                               </div>
                             </Card>
                         </div>
                     </div>
