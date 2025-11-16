@@ -1,7 +1,7 @@
 import { Header } from '@/components/layout/header';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle, Award } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -98,10 +98,10 @@ export default function AboutPage() {
                                <div className="flex flex-col">
                                     <CardHeader className="text-center md:text-left">
                                         <CardTitle className="font-headline text-2xl">Mr. Anish Paulose</CardTitle>
-                                        <div className="text-primary font-semibold text-sm">
-                                            <p>AMFI-Registered Mutual Fund Distributor (ARN-341836)</p>
-                                            <p>NISM Certified Research Analyst</p>
-                                            <p>7 years of capital market experience</p>
+                                        <div className="text-primary font-semibold text-sm mt-2 space-y-2">
+                                            <p className="flex items-center gap-2"><Award className="w-4 h-4 text-accent"/>AMFI-Registered Mutual Fund Distributor (ARN-341836)</p>
+                                            <p className="flex items-center gap-2"><Award className="w-4 h-4 text-accent"/>NISM Certified Research Analyst</p>
+                                            <p className="flex items-center gap-2"><Award className="w-4 h-4 text-accent"/>7 years of capital market experience</p>
                                         </div>
                                     </CardHeader>
                                     <CardContent className="text-left text-muted-foreground space-y-4">
