@@ -47,19 +47,27 @@ export default function AboutPage() {
 
                 <section className="py-16 md:py-24">
                     <div className="container mx-auto px-4">
-                        <div className="grid md:grid-cols-2 gap-12 items-center">
-                            <div>
-                                <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary mb-6">Our Mission</h2>
-                                <p className="text-lg text-muted-foreground mb-4">
-                                    To democratize wealth creation by providing accessible, intelligent, and personalized financial advice. We empower our clients to achieve their life goals with confidence.
-                                </p>
-                            </div>
-                            <div>
-                                <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary mb-6">Our Vision</h2>
-                                <p className="text-lg text-muted-foreground">
-                                    To be India’s most trusted financial advisory firm, known for our unwavering commitment to client success, ethical practices, and innovative solutions.
-                                </p>
-                            </div>
+                        <div className="grid md:grid-cols-2 gap-12 items-start">
+                            <Card className="shadow-lg h-full">
+                                <CardHeader>
+                                    <CardTitle className="text-3xl md:text-4xl font-bold font-headline text-primary">Our Mission</CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <p className="text-lg text-muted-foreground">
+                                        To democratize wealth creation by providing accessible, intelligent, and personalized financial advice. We empower our clients to achieve their life goals with confidence.
+                                    </p>
+                                </CardContent>
+                            </Card>
+                            <Card className="shadow-lg h-full">
+                                <CardHeader>
+                                    <CardTitle className="text-3xl md:text-4xl font-bold font-headline text-primary">Our Vision</CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <p className="text-lg text-muted-foreground">
+                                        To be India’s most trusted financial advisory firm, known for our unwavering commitment to client success, ethical practices, and innovative solutions.
+                                    </p>
+                                </CardContent>
+                            </Card>
                         </div>
                     </div>
                 </section>
