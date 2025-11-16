@@ -3,11 +3,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ContactForm } from '@/components/contact-form';
 import { MapPin, Mail, Phone } from 'lucide-react';
 
-const contactDetails = [
-    { icon: MapPin, text: '123 Finance Street, New York, USA' },
-    { icon: Mail, text: 'contact@flexiwealth.com' },
-    { icon: Phone, text: '+1 (234) 567-890' }
-];
 
 export default function ContactPage() {
   return (
@@ -25,21 +20,10 @@ export default function ContactPage() {
 
         <section className="py-16 md:py-24">
             <div className="container mx-auto px-4">
-                <Card className="max-w-6xl mx-auto shadow-xl overflow-hidden grid grid-cols-1 md:grid-cols-2">
+                <Card className="max-w-2xl mx-auto shadow-xl overflow-hidden">
                     <div className="p-8 md:p-12">
-                        <h2 className="text-3xl font-bold font-headline text-primary mb-6">Send us a message</h2>
+                        <h2 className="text-3xl font-bold font-headline text-primary mb-6 text-center">Send us a message</h2>
                         <ContactForm />
-                    </div>
-                    <div className="bg-secondary p-8 md:p-12 text-secondary-foreground">
-                        <h2 className="text-3xl font-bold font-headline text-primary mb-6">Contact Information</h2>
-                        <div className="space-y-6">
-                            {contactDetails.map((detail, index) => (
-                                <div key={index} className="flex items-start gap-4">
-                                    <detail.icon className="h-6 w-6 text-accent mt-1" />
-                                    <p className="text-lg text-foreground">{detail.text}</p>
-                                </div>
-                            ))}
-                        </div>
                     </div>
                 </Card>
             </div>
