@@ -5,6 +5,18 @@
       "description": "A modern, bright office with people collaborating, suggesting financial planning and success.",
       "imageUrl": "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxmaW5hbmNlJTIwb2ZmaWNlfGVufDB8fHx8MTc2MTA1MjQxNnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "finance office"
+    },
+    {
+      "id": "about-hero",
+      "description": "A team of professionals in a modern office setting, looking at a presentation with charts and graphs, conveying teamwork and expertise.",
+      "imageUrl": "https://images.unsplash.com/photo-1568992687947-868a62a9f521?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx0ZWFtJTIwbWVldGluZ3xlbnwwfHx8fDE3NjMyMTcwMTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "team meeting"
+    },
+    {
+      "id": "harsh-jhaveri",
+      "description": "Professional headshot of Harsh Jhaveri, Founder & Principal Advisor.",
+      "imageUrl": "https://images.unsplash.com/photo-1651684215020-f7a5b6610f23?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxtYWxlJTIwaGVhZHNob3R8ZW58MHx8fHwxNzYzMjcwMzY3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "male headshot"
     }
   ]
 }
