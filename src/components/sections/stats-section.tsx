@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from 'react';
 import { Users, DollarSign, Briefcase, Calendar } from 'lucide-react';
+import { getStats, type Stat } from '@/lib/stats-service';
 
 type StatCardProps = {
   icon: React.ElementType;
@@ -76,14 +77,35 @@ const StatCard: React.FC<StatCardProps> = ({ icon: Icon, value, label, unit, pre
   );
 };
 
-const stats: StatCardProps[] = [
-  { icon: Users, value: 500, unit: '+', label: 'Families Served' },
-  { icon: DollarSign, value: 250, unit: ' Cr+', label: 'Assets Under Management' },
-  { icon: Briefcase, value: 1200, unit: '+', label: 'Total Investors' },
-  { icon: Calendar, value: 15, unit: '+', label: 'Years of Experience' },
-];
+const iconMap: { [key: string]: React.ElementType } = {
+  Users: Users,
+  DollarSign: DollarSign,
+  Briefcase: Briefcase,
+  Calendar: Calendar,
+};
 
 export function StatsSection({ id }: { id: string }) {
+  const [stats, setStats] = useState<Stat[]>([]);
+
+  useEffect(() => {
+    async function fetchStats() {
+      try {
+        const fetchedStats = await getStats();
+        setStats(fetchedStats);
+      } catch (error) {
+        console.error("Failed to fetch stats:", error);
+        // Optionally, set fallback stats
+        setStats([
+          { id: '1', label: 'Families Served', value: 500, unit: '+', icon: 'Users' },
+          { id: '2', label: 'Assets Under Management', value: 250, unit: ' Cr+', icon: 'DollarSign' },
+          { id: '3', label: 'Total Investors', value: 1200, unit: '+', icon: 'Briefcase' },
+          { id: '4', label: 'Years of Experience', value: 15, unit: '+', icon: 'Calendar' },
+        ]);
+      }
+    }
+    fetchStats();
+  }, []);
+
   return (
     <section id={id} className="py-20 sm:py-28 bg-background">
       <div className="container mx-auto px-4">
@@ -96,8 +118,15 @@ export function StatsSection({ id }: { id: string }) {
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {stats.map((stat, index) => (
-            <StatCard key={index} {...stat} />
+          {stats.map((stat) => (
+            <StatCard 
+              key={stat.id}
+              icon={iconMap[stat.icon] || Users}
+              value={stat.value}
+              label={stat.label}
+              unit={stat.unit}
+              prefix={stat.prefix}
+            />
           ))}
         </div>
       </div>
