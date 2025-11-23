@@ -10,9 +10,9 @@ export function Logo({ className }: { className?: string }) {
         fill="none" 
         xmlns="http://www.w3.org/2000/svg"
       >
-        <rect width="100" height="100" fill="#2563EB"/>
+        <rect width="100" height="100" rx="8" fill="#2563EB"/>
         <g stroke="#E5E7EB" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round">
-            <rect x="15" y="15" width="70" height="70" stroke="#E5E7EB" strokeWidth="8"/>
+            <rect x="15" y="15" width="70" height="70" rx="4" />
             <path d="M15 85L85 15" />
             <path d="M85 50C85 69.33 69.33 85 50 85" />
             <path d="M15 50C15 30.67 30.67 15 50 15" />
