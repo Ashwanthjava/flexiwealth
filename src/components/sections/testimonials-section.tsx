@@ -9,9 +9,13 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { getTestimonials, type Testimonial } from "@/lib/testimonials-service";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
 
-const testimonials = [
+const staticTestimonials: Testimonial[] = [
   {
+    id: "1",
     name: "Rohan Sharma",
     title: "Tech Entrepreneur",
     quote: "FlexiWealth transformed my approach to investing. Their data-driven advice helped me build a diversified portfolio that has consistently outperformed my expectations. Truly a trustworthy partner.",
@@ -19,6 +23,7 @@ const testimonials = [
     imageHint: "man portrait"
   },
   {
+    id: "2",
     name: "Priya Singh",
     title: "Doctor",
     quote: "As a busy professional, I needed an advisor I could rely on. Anish and his team have been phenomenal, offering clear, jargon-free guidance that secured my family's financial future. I couldn't be happier.",
@@ -26,6 +31,7 @@ const testimonials = [
     imageHint: "woman portrait"
   },
   {
+    id: "3",
     name: "Amit Patel",
     title: "Marketing Manager",
     quote: "The personalized financial plan they created for me was a game-changer. It aligned perfectly with my long-term goals, from my child's education to my own retirement. Their expertise is unmatched.",
@@ -33,6 +39,7 @@ const testimonials = [
     imageHint: "man portrait"
   },
    {
+    id: "4",
     name: "Sunita Reddy",
     title: "Small Business Owner",
     quote: "Working with FlexiWealth has been a fantastic experience. They are not just advisors, but true partners who genuinely care about your financial well-being. Highly recommended for their ethical and knowledgeable approach.",
@@ -42,6 +49,24 @@ const testimonials = [
 ];
 
 export function TestimonialsSection({ id }: { id: string }) {
+  const [testimonials, setTestimonials] = useState<Testimonial[]>(staticTestimonials);
+
+  useEffect(() => {
+    async function fetchTestimonials() {
+      try {
+        const fetchedTestimonials = await getTestimonials();
+        if (fetchedTestimonials.length > 0) {
+          setTestimonials(fetchedTestimonials);
+        }
+      } catch (error) {
+        console.error("Failed to fetch testimonials:", error);
+        // Fallback to static testimonials if fetch fails
+        setTestimonials(staticTestimonials);
+      }
+    }
+    fetchTestimonials();
+  }, []);
+
   return (
     <section id={id} className="py-20 sm:py-28 bg-secondary">
       <div className="container mx-auto px-4">
@@ -61,8 +86,8 @@ export function TestimonialsSection({ id }: { id: string }) {
           className="w-full max-w-4xl mx-auto"
         >
           <CarouselContent>
-            {testimonials.map((testimonial, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2">
+            {testimonials.map((testimonial) => (
+              <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/2">
                 <div className="p-1 h-full">
                   <Card className="h-full flex flex-col justify-between shadow-lg">
                     <CardContent className="p-6 text-center flex-grow">
