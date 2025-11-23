@@ -9,14 +9,13 @@ export function Logo({ className }: { className?: string }) {
         viewBox="0 0 100 100" 
         fill="none" 
         xmlns="http://www.w3.org/2000/svg"
-        className="text-primary"
       >
-        <rect width="100" height="100" rx="8" fill="currentColor"/>
+        <rect width="100" height="100" fill="#2563EB"/>
         <g stroke="#E5E7EB" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M20 80L20 20L80 20" />
-            <path d="M50 20C66.5685 20 80 33.4315 80 50" />
-            <path d="M20 50C20 66.5685 33.4315 80 50 80" />
-            <path d="M20 20L80 80" />
+            <rect x="15" y="15" width="70" height="70" stroke="#E5E7EB" strokeWidth="8"/>
+            <path d="M15 85L85 15" />
+            <path d="M85 50C85 69.33 69.33 85 50 85" />
+            <path d="M15 50C15 30.67 30.67 15 50 15" />
         </g>
       </svg>
       <span className="font-headline text-2xl font-bold">
