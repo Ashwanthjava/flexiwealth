@@ -2,7 +2,25 @@
 
 import { useEffect, useState, useRef } from 'react';
 import { Users, DollarSign, Briefcase, Calendar } from 'lucide-react';
-import { getStats, type Stat } from '@/lib/stats-service';
+import { getStatValues } from '@/lib/stats-service';
+
+// Define the static part of your stats here
+const staticStats = [
+  { id: 'families-served', label: 'Families Served', value: 500, unit: '+', icon: 'Users', order: 1 },
+  { id: 'assets-under-management', label: 'Assets Under Management', value: 250, unit: ' Cr+', icon: 'DollarSign', order: 2 },
+  { id: 'total-investors', label: 'Total Investors', value: 1200, unit: '+', icon: 'Briefcase', order: 3 },
+  { id: 'years-of-experience', label: 'Years of Experience', value: 15, unit: '+', icon: 'Calendar', order: 4 },
+];
+
+interface Stat {
+    id: string;
+    label: string;
+    value: number;
+    icon: string;
+    order: number;
+    unit?: string;
+    prefix?: string;
+}
 
 type StatCardProps = {
   icon: React.ElementType;
@@ -85,22 +103,23 @@ const iconMap: { [key: string]: React.ElementType } = {
 };
 
 export function StatsSection({ id }: { id: string }) {
-  const [stats, setStats] = useState<Stat[]>([]);
+  const [stats, setStats] = useState<Stat[]>(staticStats);
 
   useEffect(() => {
     async function fetchStats() {
       try {
-        const fetchedStats = await getStats();
-        setStats(fetchedStats);
+        const statValues = await getStatValues();
+        if (statValues.size > 0) {
+            const updatedStats = staticStats.map(stat => ({
+                ...stat,
+                // Use the value from Firebase if it exists, otherwise keep the default
+                value: statValues.get(stat.id) ?? stat.value,
+            }));
+            setStats(updatedStats);
+        }
       } catch (error) {
         console.error("Failed to fetch stats:", error);
-        // Optionally, set fallback stats
-        setStats([
-          { id: '1', label: 'Families Served', value: 500, unit: '+', icon: 'Users' },
-          { id: '2', label: 'Assets Under Management', value: 250, unit: ' Cr+', icon: 'DollarSign' },
-          { id: '3', label: 'Total Investors', value: 1200, unit: '+', icon: 'Briefcase' },
-          { id: '4', label: 'Years of Experience', value: 15, unit: '+', icon: 'Calendar' },
-        ]);
+        // If fetching fails, the component will just use the default staticStats
       }
     }
     fetchStats();
@@ -118,7 +137,7 @@ export function StatsSection({ id }: { id: string }) {
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {stats.map((stat) => (
+          {stats.sort((a, b) => a.order - b.order).map((stat) => (
             <StatCard 
               key={stat.id}
               icon={iconMap[stat.icon] || Users}

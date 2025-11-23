@@ -1,41 +1,31 @@
 'use server';
 
 import { db } from './firebase';
-import { collection, getDocs, orderBy, query } from 'firebase/firestore';
+import { collection, getDocs, query } from 'firebase/firestore';
 
-export interface Stat {
+export interface StatValue {
     id: string;
-    label: string;
     value: number;
-    icon: string;
-    order: number;
-    unit?: string;
-    prefix?: string;
 }
 
-export async function getStats(): Promise<Stat[]> {
+// This function now fetches only the ID and value for each stat.
+export async function getStatValues(): Promise<Map<string, number>> {
     try {
         const statsCollection = collection(db, 'stats');
-        const q = query(statsCollection, orderBy('order'));
+        const q = query(statsCollection);
         const statsSnapshot = await getDocs(q);
         
-        const stats: Stat[] = statsSnapshot.docs.map(doc => {
+        const statValues = new Map<string, number>();
+        statsSnapshot.docs.forEach(doc => {
             const data = doc.data();
-            return {
-                id: doc.id,
-                label: data.label,
-                value: data.value,
-                icon: data.icon,
-                order: data.order,
-                unit: data.unit,
-                prefix: data.prefix,
-            };
+            // We use the document ID (e.g., 'families-served') as the key
+            statValues.set(doc.id, data.value);
         });
 
-        return stats;
+        return statValues;
     } catch (error) {
-        console.error("Error fetching stats from Firestore: ", error);
-        // Return an empty array or throw the error, depending on desired error handling
-        return [];
+        console.error("Error fetching stat values from Firestore: ", error);
+        // Return an empty map in case of an error
+        return new Map<string, number>();
     }
 }
